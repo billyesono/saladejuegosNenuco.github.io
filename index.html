@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameZone - Sala de Juegos</title>
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#7611f7">
+    <meta name="description" content="La mejor sala de juegos con PlayStation 2, PC y simuladores de carreras">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="GAMENENUCO">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icons/icon-192x192.png">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">GAME<span>NENUCO</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#"><i class="fas fa-home me-1"></i>Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#servicios"><i class="fas fa-gamepad me-1"></i>Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#galeria"><i class="fas fa-images me-1"></i>Galería</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#destacados"><i class="fas fa-star me-1"></i>Destacados</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#envio-juegos"><i class="fas fa-shipping-fast me-1"></i>Envíos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#precios"><i class="fas fa-tag me-1"></i>Precios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto"><i class="fas fa-envelope me-1"></i>Contacto</a>
+                    </li>
+                </ul>
+                <button class="btn btn-catalog ms-3" data-bs-toggle="modal" data-bs-target="#catalogModal">
+                    <i class="fas fa-book-open me-2"></i>Catálogo de Juegos
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- Video Banner -->
+    <header class="video-banner">
+        <video autoplay muted loop id="banner-video">
+            <source src="videos/0_Man_Playing_Video_Games_3840x2160.mp4" type="video/mp4">
+        </video>
+        <div class="banner-content">
+            <h1 data-aos="fade-up">PLAY 2<span>ZONE</span></h1>
+            <p data-aos="fade-up" data-aos-delay="200">Como en los viejos tiempos</p>
+            <div class="banner-buttons" data-aos="fade-up" data-aos-delay="400">
+                <button id="location-btn" class="btn btn-primary btn-lg glow-btn me-3">
+                    <i class="fas fa-map-marker-alt me-2"></i>Ubicación
+                </button>
+                <button class="btn btn-catalog-banner btn-lg" data-bs-toggle="modal" data-bs-target="#catalogModal">
+                    <i class="fas fa-gamepad me-2"></i>VER CATÁLOGO DE JUEGOS
+                </button>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Servicios -->
+    <section id="servicios" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Nuestros Servicios</h2>
+            <div class="row g-4">
+                <div class="col-md-3" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="service-card">
+                        <div class="icon-box">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <h3>PC Gaming</h3>
+                        <p>Equipos de última generación con los mejores componentes para una experiencia de juego sin igual.</p>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="service-card">
+                        <div class="icon-box">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <h3>PlayStation 2</h3>
+                        <p>Revive la época dorada del playstation 2 con nuestra colección de juegos clásicos de PS2.</p>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="service-card">
+                        <div class="icon-box">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h3>Simuladores de Carreras</h3>
+                        <p>Disfruta de la mejor experiencia de conducción con nuestros volantes y simuladores de carreras.</p>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="service-card">
+                        <div class="icon-box">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <h3>Envío de Juegos</h3>
+                        <p>Servicio de envío de juegos de PS2, PSP y PC pon USB o telefonos. Recibe tus títulos favoritos .</p>
+                        <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#catalogModal">
+                            <i class="fas fa-gamepad me-2"></i>Ver Catálogo
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería -->
+    <section id="galeria" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Nuestra Sala de Juegos</h2>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="gallery-item">
+                        <img src="img/gaming-setup-with-computer-chair.jpg" alt="Setup Gaming" class="img-fluid">
+                        <div class="overlay">
+                            <h4>Disfruta de la mejor experiencia </h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="gallery-item">
+                        <img src="img/man-holding-joystick-video-games.jpg" alt="Zona de Consolas" class="img-fluid">
+                        <div class="overlay">
+                            <h4>Zona de PlayStation 2</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="gallery-item">
+                        <img src="img/view-illuminated-neon-gaming-keyboard-setup-controller.jpg" alt="Periféricos Gaming" class="img-fluid">
+                        <div class="overlay">
+                            <h4>Simuladores de Carreras </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destacados -->
+    <section id="destacados" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Experiencias Destacadas</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="featured-content">
+                        <h3>Simuladores de Carreras Profesionales</h3>
+                        <p class="mb-4">Disfruta de la mejor experiencia de conducción con nuestros volantes Logitech G29, Thrustmaster T300 y asientos de simulación completos. Perfectos para juegos como Gran Turismo, Forza Motorsport, F1 y Assetto Corsa.</p>
+                        <ul class="featured-list">
+                            <li><i class="fas fa-check-circle"></i> Volantes con Force Feedback</li>
+                            <li><i class="fas fa-check-circle"></i> Pedales profesionales</li>
+                            <li><i class="fas fa-check-circle"></i> Asientos ergonómicos</li>
+                            <li><i class="fas fa-check-circle"></i> Pantallas de alta resolución</li>
+                        </ul>
+                        <button class="btn btn-primary mt-3">Reservar Ahora</button>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="featured-image">
+                        <img src="img/view-illuminated-neon-gaming-keyboard-setup-controller.jpg" alt="Simulador de Carreras" class="img-fluid rounded">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row align-items-center mt-5 flex-lg-row-reverse">
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="featured-content">
+                        <h3>Colección PlayStation 2 Clásica</h3>
+                        <p class="mb-4">Revive la nostalgia con nuestra extensa colección de juegos de PS2. Desde God of War y Gran Turismo hasta Metal Gear Solid y Final Fantasy, tenemos los mejores títulos de la consola más vendida de la historia.</p>
+                        <ul class="featured-list">
+                            <li><i class="fas fa-check-circle"></i> Más de 200 juegos originales</li>
+                            <li><i class="fas fa-check-circle"></i> Mandos DualShock 2 en perfecto estado</li>
+                            <li><i class="fas fa-check-circle"></i> Memory Cards incluidas</li>
+                            <li><i class="fas fa-check-circle"></i> Pantallas HD optimizadas</li>
+                        </ul>
+                        <a href="https://wa.me/240555407717?text=Hola,%20me%20gustaría%20ver%20el%20catálogo%20de%20juegos%20de%20PlayStation%202" target="_blank" class="btn btn-whatsapp mt-3">
+                            <i class="fab fa-whatsapp me-2"></i>Contactar por WhatsApp
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="featured-image">
+                        <img src="img/man-holding-joystick-video-games.jpg" alt="PlayStation 2" class="img-fluid rounded">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicio de Envío -->
+    <section id="envio-juegos" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Servicio de Envío de Juegos</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="shipping-content">
+                        <h3>Juegos a Enviar</h3>
+                        <p class="mb-4">Disfruta de nuestro extenso catálogo de juegos sin salir de casa. Ofrecemos un servicio de envío rápido .</p>
+                        
+                        <div class="platform-cards">
+                            <div class="platform-card">
+                                <i class="fas fa-desktop"></i>
+                                <h4>PC Gaming</h4>
+                                <p>Más de 500 juegos disponibles</p>
+                            </div>
+                            <div class="platform-card">
+                                <i class="fab fa-playstation"></i>
+                                <h4>PlayStation 2</h4>
+                                <p>Colección de 200+ juegos clásicos</p>
+                            </div>
+                            <div class="platform-card">
+                                <i class="fas fa-gamepad"></i>
+                                <h4>PSP</h4>
+                                <p>Los mejores juegos portátiles</p>
+                            </div>
+                        </div>
+                        
+                        <h4 class="mt-4">¿Cómo funciona?</h4>
+                        <ol class="shipping-steps">
+                            <li>Selecciona los juegos que deseas comprar</li>
+                            <li>Elige el período de alquiler (1 semana, 2 semanas o 1 mes)</li>
+                            <li>Proporciona tu dirección de envío</li>
+                            <li>Recibe tus juegos en persona</li>
+                            <li>¡Disfruta de tus juegos favoritos!</li>
+                        </ol>
+                        
+                        <a href="https://wa.me/240555407717?text=Hola,%20me%20gustaría%20ver%20el%20catálogo%20completo%20de%20juegos" target="_blank" class="btn btn-whatsapp mt-3">
+                            <i class="fab fa-whatsapp me-2"></i>Contactar por WhatsApp
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="shipping-image-container">
+                        <div class="shipping-image">
+                            <img src="img/man-holding-joystick-video-games.jpg" alt="Juegos PS2" class="img-fluid rounded">
+                            <div class="shipping-badge ps2-badge">PS2</div>
+                        </div>
+                        <div class="shipping-image mt-4">
+                            <img src="img/gaming-setup-with-computer-chair.jpg" alt="Juegos PC" class="img-fluid rounded">
+                            <div class="shipping-badge pc-badge">PC</div>
+                        </div>
+                        <div class="shipping-image shipping-image-small">
+                            <img src="img/view-illuminated-neon-gaming-keyboard-setup-controller.jpg" alt="Juegos PSP" class="img-fluid rounded">
+                            <div class="shipping-badge psp-badge">PSP</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="shipping-pricing" data-aos="fade-up">
+                        <h3 class="text-center mb-4">Precios de Envío</h3>
+                        <div class="table-responsive">
+                            <table class="table table-pricing">
+                                <thead>
+                                    <tr>
+                                        <th>Plataforma</th>
+                                        <th>Alquiler (1 semana)</th>
+                                        <th>Alquiler (2 semanas)</th>
+                                       
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><i class="fab fa-playstation me-2"></i>PlayStation 2</td>
+                                        <td>XAF 500 / juego</td>
+                                        <td>Desde 250</td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="fas fa-gamepad me-2"></i>PSP</td>
+                                        <td>XAF 250 / juego</td>
+                                        <td>Desde 100</td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="fas fa-desktop me-2"></i>PC</td>
+                                        <td>XAF 1000 / juego</td>
+                                        <td>Desde 800</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Precios -->
+    <section id="precios" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">ALQUILER DE PLAY STATION 2</h2>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="flip-left" data-aos-delay="100">
+                    <div class="price-card">
+                        <div class="price-header">
+                            <h3>Básico</h3>
+                            <div class="price">
+                                <span class="currency">XAF</span>
+                                <span class="amount">500</span>
+                                <span class="duration">/5 hora</span>
+                            </div>
+                        </div>
+                        <div class="price-body">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Juegos de playstation 2</li>
+                                <li><i class="fas fa-check"></i> Acceso a juegos básicos</li>
+                            </ul>
+                            <!-- <button class="btn btn-outline-primary w-100">Seleccionar</button> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="flip-left" data-aos-delay="200">
+                    <div class="price-card featured">
+                        <div class="price-badge">Popular</div>
+                        <div class="price-header">
+                            <h3>Premium</h3>
+                            <div class="price">
+                                <span class="currency">XAF</span>
+                                <span class="amount">1000</span>
+                                <span class="duration">/10 hora</span>
+                            </div>
+                        </div>
+                        <div class="price-body">
+                            <ul>
+                                <!-- <li><i class="fas fa-check"></i> PC Gaming de Alta Gama</li>
+                                <li><i class="fas fa-check"></i> Acceso a todos los juegos</li>
+                                <li><i class="fas fa-check"></i> Bebida y snack</li>
+                                <li><i class="fas fa-check"></i> 30 min de VR incluidos</li>
+                                <li><i class="fas fa-times"></i> Sin reserva privada</li> -->
+                            </ul>
+                            <!-- <button class="btn btn-primary w-100">Seleccionar</button> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="flip-left" data-aos-delay="300">
+                    <div class="price-card">
+                        <div class="price-header">
+                            <h3>Elite</h3>
+                            <div class="price">
+                                <span class="currency">XAF</span>
+                                <span class="amount">1500</span>
+                                <span class="duration">/24 hora</span>
+                            </div>
+                        </div>
+                        <div class="price-body">
+                            <!-- <ul>
+                                <li><i class="fas fa-check"></i> PC Gaming Profesional</li>
+                                <li><i class="fas fa-check"></i> Acceso a todos los juegos</li>
+                                <li><i class="fas fa-check"></i> Comida y bebida ilimitada</li>
+                                <li><i class="fas fa-check"></i> Acceso ilimitado a VR</li>
+                                <li><i class="fas fa-check"></i> Sala privada</li>
+                            </ul>
+                            <button class="btn btn-outline-primary w-100">Seleccionar</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contador de Estadísticas -->
+    <section class="counter-section py-5">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 col-6 mb-4" data-aos="fade-up">
+                    <div class="counter">
+                        <i class="fas fa-users"></i>
+                        <div class="counter-value" data-count="5000">0</div>
+                        <h4>Clientes Felices</h4>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="counter">
+                        <i class="fas fa-gamepad"></i>
+                        <div class="counter-value" data-count="200">0</div>
+                        <h4>Juegos Disponibles</h4>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="counter">
+                        <i class="fas fa-desktop"></i>
+                        <div class="counter-value" data-count="50">0</div>
+                        <h4>Estaciones Gaming</h4>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="counter">
+                        <i class="fas fa-trophy"></i>
+                        <div class="counter-value" data-count="20">0</div>
+                        <h4>Torneos Mensuales</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Contáctanos</h2>
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="contact-info">
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h5>Ubicación</h5>
+                                <p>Bata, Guinea Ecuatorial </p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <h5>Teléfono</h5>
+                                <p>+240 555 407 717</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h5>Email</h5>
+                                <p>juanmariaesono@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h5>Horario</h5>
+                                <p>Lun - Dom: 10:00 - 00:00</p>
+                            </div>
+                        </div>
+                        <div class="social-links mt-4">
+                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-discord"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitch"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <form class="contact-form">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Nombre completo" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="tel" class="form-control" placeholder="Teléfono">
+                        </div>
+                        <div class="mb-3">
+                            <select class="form-select">
+                                <option selected>Selecciona un servicio</option>
+                                <!-- <option value="1">Reserva PC Gaming</option> -->
+                                <option value="2">Reserva PlayStation 2</option>
+                                <option value="3">Reserva Simulador de Carreras</option>
+                                <option value="4">Envío de Juegos</option>
+                                <option value="5">Organizar Evento</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="5" placeholder="Mensaje" required></textarea>
+                        </div>
+                        <!-- <button type="submit" class="btn btn-primary w-100">Enviar Mensaje</button> -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="footer-logo">GAME<span>ZONE</span></h3>
+                    <p>La mejor sala de juegos con la última tecnología para los verdaderos .</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>&copy; 2025 GameZone. Todos los derechos reservados.</p>
+                    <div class="footer-links">
+                        <a href="#">Términos y Condiciones</a>
+                        <a href="#">Política de Privacidad</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="btn btn-primary btn-floating">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Botón Flotante de Catálogo -->
+    <button id="catalog-float-btn" class="btn btn-catalog-float btn-floating" data-bs-toggle="modal" data-bs-target="#catalogModal">
+        <i class="fas fa-gamepad"></i>
+    </button>
+
+    <!-- Modal de Ubicación -->
+    <div class="modal fade" id="locationModal" tabindex="-1" aria-labelledby="locationModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="locationModalLabel">Nuestra Ubicación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="map-container">
+                        <iframe 
+                            width="100%" 
+                            height="450" 
+                            style="border:0;" 
+                            loading="lazy" 
+                            allowfullscreen 
+                            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Av.+de+los+Videojuegos+123,+Ciudad+Gamer&maptype=satellite">
+                        </iframe>
+                    </div>
+                    <div class="map-info mt-3">
+                        <h5><i class="fas fa-map-marker-alt me-2"></i>Dirección</h5>
+                        <p>Av. de los Videojuegos 123, Ciudad Gamer</p>
+                        <h5><i class="fas fa-phone-alt me-2"></i>Teléfono</h5>
+                        <p>+34 123 456 789</p>
+                        <h5><i class="fas fa-clock me-2"></i>Horario</h5>
+                        <p>Lun - Dom: 10:00 - 00:00</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=Av.+de+los+Videojuegos+123,+Ciudad+Gamer&travelmode=driving" target="_blank" class="btn btn-primary">
+                        <i class="fas fa-directions me-2"></i>Cómo llegar
+                    </a>
+                    <button id="toggle-map-type" type="button" class="btn btn-outline-primary">
+                        <i class="fas fa-map me-2"></i>Cambiar vista
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Catálogo -->
+    <div class="modal fade" id="catalogModal" tabindex="-1" aria-labelledby="catalogModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="catalogModalLabel">Catálogo de Juegos</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul class="nav nav-tabs" id="catalogTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="ps2-tab" data-bs-toggle="tab" data-bs-target="#ps2" type="button" role="tab" aria-controls="ps2" aria-selected="true">PlayStation 2</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="psp-tab" data-bs-toggle="tab" data-bs-target="#psp" type="button" role="tab" aria-controls="psp" aria-selected="false">PSP</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pc-tab" data-bs-toggle="tab" data-bs-target="#pc" type="button" role="tab" aria-controls="pc" aria-selected="false">PC</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content pt-4" id="catalogTabsContent">
+                        <div class="tab-pane fade show active" id="ps2" role="tabpanel" aria-labelledby="ps2-tab">
+                            <div class="row">
+                                <div class="col-md-3 col-6 mb-4">
+                                    <div class="game-card">
+                                        <div class="game-img">
+                                            <img src="img/man-holding-joystick-video-games.jpg" alt="God of War" class="img-fluid">
+                                        </div>
+                                        <div class="game-info">
+                                            <h5>God of War 2</h5>
+                                            <div class="game-meta">
+                                                <span class="game-genre">Acción</span>
+                                                <span class="game-year">2007</span>
+                                            </div>
+                                            <div class="game-price">
+                                            
+                                                <span class="buy-price">500 XAF</span>
+                                            </div>
+                                            <a href="https://wa.me/240555407717?text=Hola,%20me%20interesa%20este%20juego:%20God%20of%20War%202" target="_blank" class="btn btn-sm btn-whatsapp w-100">
+                                                <i class="fab fa-whatsapp me-1"></i> Contactar
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6 mb-4">
+                                    <div class="game-card">
+                                        <div class="game-img">
+                                            <img src="img/gaming-setup-with-computer-chair.jpg" alt="Final Fantasy X" class="img-fluid">
+                                        </div>
+                                        <div class="game-info">
+                                            <h5>Final Fantasy X</h5>
+                                            <div class="game-meta">
+                                                <span class="game-genre">RPG</span>
+                                                <span class="game-year">2001</span>
+                                            </div>
+                                            <div class="game-price">
+                                              
+                                                <span class="buy-price">500 XAF</span>
+                                            </div>
+                                            <a href="https://wa.me/240555407717?text=Hola,%20me%20interesa%20este%20juego:%20Final%20Fantasy%20X" target="_blank" class="btn btn-sm btn-whatsapp w-100">
+                                                <i class="fab fa-whatsapp me-1"></i> Contactar
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6 mb-4">
+                                    <div class="game-card">
+                                        <div class="game-img">
+                                            <img src="img/view-illuminated-neon-gaming-keyboard-setup-controller.jpg" alt="Gran Turismo 4" class="img-fluid">
+                                        </div>
+                                        <div class="game-info">
+                                            <h5>Gran Turismo 4</h5>
+                                            <div class="game-meta">
+                                                <span class="game-genre">Carreras</span>
+                                                <span class="game-year">2004</span>
+                                            </div>
+                                            <div class="game-price">
+                                                <span class="buy-price">500 XAF</span>
+                                            </div>
+                                            <a href="https://wa.me/240555407717?text=Hola,%20me%20interesa%20este%20juego:%20Gran%20Turismo%204" target="_blank" class="btn btn-sm btn-whatsapp w-100">
+                                                <i class="fab fa-whatsapp me-1"></i> Contactar
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6 mb-4">
+                                    <div class="game-card">
+                                        <div class="game-img">
+                                            <img src="img/man-holding-joystick-video-games.jpg" alt="Metal Gear Solid 3" class="img-fluid">
+                                        </div>
+                                        <div class="game-info">
+                                            <h5>Metal Gear Solid 3</h5>
+                                            <div class="game-meta">
+                                                <span class="game-genre">Acción</span>
+                                                <span class="game-year">2004</span>
+                                            </div>
+                                            <div class="game-price">
+                                                <span class="buy-price">500 XAF</span>
+                                            </div>
+                                            <a href="https://wa.me/240555407717?text=Hola,%20me%20interesa%20este%20juego:%20Metal%20Gear%20Solid%203" target="_blank" class="btn btn-sm btn-whatsapp w-100">
+                                                <i class="fab fa-whatsapp me-1"></i> Contactar
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 text-center mt-3">
+                                    <a href="https://wa.me/240555407717?text=Hola,%20me%20gustaría%20ver%20más%20juegos%20de%20PS2" target="_blank" class="btn btn-outline-whatsapp">
+                                        <i class="fab fa-whatsapp me-2"></i>Ver más juegos PS2
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="psp" role="tabpanel" aria-labelledby="psp-tab">
+                            <div class="row">
+                                <div class="col-md-3 col-6 mb-4">
+                                    <div class="game-card">
+                                        <div class="game-img">
+                                            <img src="img/gaming-setup-with-computer-chair.jpg" alt="Crisis Core" class="img-fluid">
+                                        </div>
+                                        <div class="game-info">
+                                            <h5>Crisis Core: FF VII</h5>
+                                            <div class="game-meta">
+                                                <span class="game-genre">RPG</span>
+                                                <span class="game-year">2007</span>
+                                            </div>
+                                            <div class="game-price">
+                                                <span class="buy-price">250 XAF</span>
+                                            </div>
+                                            <a href="https://wa.me/240555407717?text=Hola,%20me%20interesa%20este%20juego:%20Crisis%20Core:%20FF%20VII" target="_blank" class="btn btn-sm btn-whatsapp w-100">
+                                                <i class="fab fa-whatsapp me-1"></i> Contactar
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6 mb-4">
+                                    <div class="game-card">
+                                        <div class="game-img">
+                                            <img src="img/view-illuminated-neon-gaming-keyboard-setup-controller.jpg" alt="God of War" class="img-fluid">
+                                        </div>
+                                        <div class="game-info">
+                                            <h5>God of War: Chains</h5>
+                                            <div class="game-meta">
+                                                <span class="game-genre">Acción</span>
+                                                <span class="game-year">2008</span>
+                                            </div>
+                                            <div class="game-price">
+                                                <span class="buy-price">250 XAF</span>
+                                            </div>
+                                            <a href="https://wa.me/240555407717?text=Hola,%20me%20interesa%20este%20juego:%20God%20of%20War:%20Chains" target="_blank" class="btn btn-sm btn-whatsapp w-100">
+                                                <i class="fab fa-whatsapp me-1"></i> Contactar
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3 col-6 mb-4">
+                                    <div class="game-card">
+                                        <div class="game-img">
+                                            <img src="img/view-illuminated-neon-gaming-keyboard-setup-controller.jpg" alt="God of War" class="img-fluid">
+                                        </div>
+                                        <div class="game-info">
+                                            <h5>Naruto</h5>
+                                            <div class="game-meta">
+                                                <span class="game-genre">Acción</span>
+                                                <span class="game-year">2008</span>
+                                            </div>
+                                            <div class="game-price">
+                                                <span class="buy-price">250 XAF</span>
+                                            </div>
+                                            <a href="https://wa.me/240555407717?text=Hola,%20me%20interesa%20este%20juego:%20God%20of%20War:%20Chains" target="_blank" class="btn btn-sm btn-whatsapp w-100">
+                                                <i class="fab fa-whatsapp me-1"></i> Contactar
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3 col-6 mb-4">
+                                    <div class="game-card">
+                                        <div class="game-img">
+                                            <img src="img/view-illuminated-neon-gaming-keyboard-setup-controller.jpg" alt="God of War" class="img-fluid">
+                                        </div>
+                                        <div class="game-info">
+                                            <h5>Harry Potter</h5>
+                                            <div class="game-meta">
+                                                <span class="game-genre">Acción</span>
+                                                <span class="game-year">2008</span>
+                                            </div>
+                                            <div class="game-price">
+                                                <span class="buy-price">250 XAF</span>
+                                            </div>
+                                            <a href="https://wa.me/240555407717?text=Hola,%20me%20interesa%20este%20juego:%20God%20of%20War:%20Chains" target="_blank" class="btn btn-sm btn-whatsapp w-100">
+                                                <i class="fab fa-whatsapp me-1"></i> Contactar
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="col-12 text-center mt-3">
+                                    <a href="https://wa.me/240555407717?text=Hola,%20me%20gustaría%20ver%20más%20juegos%20de%20PSP" target="_blank" class="btn btn-outline-whatsapp">
+                                        <i class="fab fa-whatsapp me-2"></i>Ver más juegos PSP
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pc" role="tabpanel" aria-labelledby="pc-tab">
+                            <div class="row">
+                                <div class="col-md-3 col-6 mb-4">
+                                    <div class="game-card">
+                                        <div class="game-img">
+                                            <img src="img/view-illuminated-neon-gaming-keyboard-setup-controller.jpg" alt="The Witcher 3" class="img-fluid">
+                                        </div>
+                                        <div class="game-info">
+                                            <h5>The Witcher 3</h5>
+                                            <div class="game-meta">
+                                                <span class="game-genre">RPG</span>
+                                                <span class="game-year">2015</span>
+                                            </div>
+                                            <div class="game-price">
+                                                <span class="rent-price">$10 / 2 semanas</span>
+                                                <span class="buy-price">$25</span>
+                                            </div>
+                                            <a href="https://wa.me/240555407717?text=Hola,%20me%20interesa%20este%20juego:%20The%20Witcher%203" target="_blank" class="btn btn-sm btn-whatsapp w-100">
+                                                <i class="fab fa-whatsapp me-1"></i> Contactar
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6 mb-4">
+                                    <div class="game-card">
+                                        <div class="game-img">
+                                            <img src="img/gaming-setup-with-computer-chair.jpg" alt="GTA V" class="img-fluid">
+                                        </div>
+                                        <div class="game-info">
+                                            <h5>GTA V</h5>
+                                            <div class="game-meta">
+                                                <span class="game-genre">Acción</span>
+                                                <span class="game-year">2013</span>
+                                            </div>
+                                            <div class="game-price">
+                                                <span class="rent-price">$10 / 2 semanas</span>
+                                                <span class="buy-price">$30</span>
+                                            </div>
+                                            <a href="https://wa.me/240555407717?text=Hola,%20me%20interesa%20este%20juego:%20GTA%20V" target="_blank" class="btn btn-sm btn-whatsapp w-100">
+                                                <i class="fab fa-whatsapp me-1"></i> Contactar
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 text-center mt-3">
+                                    <a href="https://wa.me/240555407717?text=Hola,%20me%20gustaría%20ver%20más%20juegos%20de%20PC" target="_blank" class="btn btn-outline-whatsapp">
+                                        <i class="fab fa-whatsapp me-2"></i>Ver más juegos PC
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <a href="https://wa.me/240555407717?text=Hola,%20me%20gustaría%20consultar%20sobre%20los%20juegos%20disponibles" target="_blank" class="btn btn-whatsapp">
+                        <i class="fab fa-whatsapp me-2"></i>Contactar por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+    
+    <!-- PWA Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('Service Worker registrado con éxito:', registration.scope);
+                    })
+                    .catch(error => {
+                        console.log('Error al registrar el Service Worker:', error);
+                    });
+            });
+        }
+        
+        // Código para mostrar el botón de instalación
+        let deferredPrompt;
+        const installButton = document.createElement('button');
+        installButton.style.display = 'none';
+        installButton.classList.add('btn', 'btn-primary', 'install-button');
+        installButton.innerHTML = '<i class="fas fa-download me-2"></i>Instalar App';
+        document.body.appendChild(installButton);
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            // Prevenir que Chrome muestre la mini-infobar
+            e.preventDefault();
+            // Guardar el evento para usarlo más tarde
+            deferredPrompt = e;
+            // Mostrar el botón de instalación
+            installButton.style.display = 'block';
+            installButton.style.position = 'fixed';
+            installButton.style.bottom = '20px';
+            installButton.style.right = '20px';
+            installButton.style.zIndex = '9999';
+            
+            installButton.addEventListener('click', () => {
+                // Ocultar el botón de instalación
+                installButton.style.display = 'none';
+                // Mostrar el prompt de instalación
+                deferredPrompt.prompt();
+                // Esperar a que el usuario responda al prompt
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('Usuario aceptó la instalación');
+                    } else {
+                        console.log('Usuario rechazó la instalación');
+                    }
+                    deferredPrompt = null;
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
